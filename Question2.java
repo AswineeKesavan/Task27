@@ -24,9 +24,11 @@ public class Question2 {
 				System.out.println("Verification failed: The page title is not 'Frames'. Actual title: " + pageTitle);
 			}
 
+			Thread.sleep(2000);
 			// Step 3: Switch to the top frame
 			driver.switchTo().frame("frame-top");
 
+			Thread.sleep(2000);
 			// Step 4: Verify that there are three frames on the page
 			int frameCount = driver.findElements(By.tagName("frame")).size();
 			if (frameCount == 3) {
@@ -35,6 +37,7 @@ public class Question2 {
 				System.out.println("Verification failed: There are not three frames.");
 			}
 
+			Thread.sleep(2000);
 			// Step 5: Switch to the left frame
 			driver.switchTo().frame("frame-left");
 			String leftFrameText = driver.findElement(By.cssSelector("body")).getText();
@@ -46,7 +49,8 @@ public class Question2 {
 
 			// Step 6: Switch back to the top frame
 			driver.switchTo().parentFrame();
-
+			Thread.sleep(2000);
+			
 			// Step 7: Switch to the middle frame
 			driver.switchTo().frame("frame-middle");
 			String middleFrameText = driver.findElement(By.cssSelector("body")).getText();
@@ -59,6 +63,7 @@ public class Question2 {
 			// Step 8: Switch back to the top frame
 			driver.switchTo().parentFrame();
 
+			Thread.sleep(2000);
 			// Step 9: Switch to the right frame
 			driver.switchTo().frame("frame-right");
 			String rightFrameText = driver.findElement(By.cssSelector("body")).getText();
@@ -70,7 +75,7 @@ public class Question2 {
 
 			// Step 10: Switch back to the top frame
 			driver.switchTo().parentFrame();
-
+			Thread.sleep(2000);
 			// Step 11: Switch to the bottom frame
 			driver.switchTo().frame("frame-bottom");
 			String bottomFrameText = driver.findElement(By.cssSelector("body")).getText();
@@ -79,10 +84,11 @@ public class Question2 {
 			} else {
 				System.out.println("Verification failed: The bottom frame does not have the correct text.");
 			}
-
+			
+			Thread.sleep(2000);
 			// Step 12: Switch back to the top frame
 			driver.switchTo().parentFrame();
-
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
